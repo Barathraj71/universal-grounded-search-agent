@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grounded Research Agent</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">LIVE EVIDENCE • UNIVERSAL SEARCH</div>
+      <h1>Ask anything.<br><span>Get grounded answers.</span></h1>
+      <p>One search box for facts, how-to questions, opinions, comparisons, research and current information.</p>
+    </header>
+
+    <section class="search-card">
+      <label for="question">Your question</label>
+      <textarea id="question" placeholder="Ask anything worth researching..."></textarea>
+
+      <div class="chips">
+        <button data-q="What do people think about the Royal Enfield Classic 350?">Classic 350 opinions</button>
+        <button data-q="What is Tata Steel stock price now?">Tata Steel price</button>
+        <button data-q="What is the weather in Chennai today?">Chennai weather</button>
+        <button data-q="Why does Python have a GIL?">Python GIL</button>
+        <button data-q="What laptop is good for programming under ₹60,000?">Laptop under ₹60,000</button>
+      </div>
+
+      <div class="controls">
+        <select id="template">
+          <option value="balanced">Balanced answer</option>
+          <option value="quick">Quick answer</option>
+          <option value="deep">Deep dive</option>
+          <option value="tutorial">Tutorial</option>
+          <option value="comparison">Comparison</option>
+          <option value="summary">Summary</option>
+        </select>
+        <button id="ask">Search →</button>
+      </div>
+    </section>
+
+    <section class="report" id="report">
+      <div class="report-head">
+        <div>
+          <div class="eyebrow">SCOUT'S REPORT</div>
+          <h2 id="answer-title">Grounded answer</h2>
+        </div>
+        <span class="badge" id="grounded">Waiting</span>
+      </div>
+
+      <div id="answer" class="answer empty">Ask a question to start a live grounded search.</div>
+
+      <div class="meta-grid">
+        <div class="meta"><small>INTENT</small><strong id="intent">—</strong></div>
+        <div class="meta"><small>ROUTE</small><strong id="route">—</strong></div>
+        <div class="meta"><small>CONFIDENCE</small><strong id="confidence">—</strong></div>
+        <div class="meta"><small>FRESHNESS</small><strong id="freshness">—</strong></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">ACTIVITY</div>
+        <div id="activity"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">SOURCES USED</div>
+        <div id="sources" class="sources"></div>
+      </div>
+
+      <div class="two-col">
+        <div class="section">
+          <div class="section-title">FOLLOW UP QUESTIONS</div>
+          <div id="followups" class="suggestions"></div>
+        </div>
+        <div class="section">
+          <div class="section-title">DISCOVER RELATED</div>
+          <div id="related" class="suggestions"></div>
+        </div>
+      </div>
+
+      <div class="feedback">
+        <span>Was this useful?</span>
+        <button data-helpful="true">Yes</button>
+        <button data-helpful="false">No</button>
+      </div>
+    </section>
+  </main>
+  <script src="/static/script.js"></script>
+</body>
+</html>
